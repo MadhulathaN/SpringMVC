@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Registration {
+	private String role;
 	private String userName;
 	@NotEmpty
 	@Size(min = 4, max = 20)
@@ -14,6 +15,14 @@ public class Registration {
 	@NotEmpty
 	@Email
 	private String email;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public void setUserName(String userName) {
 		this.userName = userName;

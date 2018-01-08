@@ -36,7 +36,8 @@
 			</property>
 			<property name="annotatedClasses">
 			<list>
-				  <value>net.roseindia.model.Users</value> <!-- Entity classes-->
+				  <value>net.roseindia.model.Users</value>
+				  <value>net.roseindia.model.Registrations</value> <!-- Entity classes-->
 			</list>
 			</property>
 

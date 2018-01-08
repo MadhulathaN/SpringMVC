@@ -10,7 +10,18 @@
 <body>
 <form:form method="Post" action="registrationform.html"
 	commandName="registration">
+		
 	<table>
+		<tr>
+			<td>Role :</td>
+		</tr>
+		<tr>
+			<td><select name="role">
+			<option value="Admin">Admin</option>
+			<option value="Employee">Employee</option>
+			</select></td>
+		</tr>
+		
 		<tr>
 			<td>User Name:<FONT color="red"><form:errors
 				path="userName" /></FONT></td>

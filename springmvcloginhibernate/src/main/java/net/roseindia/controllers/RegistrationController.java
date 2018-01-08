@@ -9,16 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import net.roseindia.form.Registration;
+import net.roseindia.service.RegistrationService;
 
 @Controller
 @RequestMapping("/registrationform.html")
 public class RegistrationController {
 	@Autowired
 	private RegistrationValidation registrationValidation;
+	@Autowired
+	private RegistrationService registrationService;
 
 	public void setRegistrationValidation(
 			RegistrationValidation registrationValidation) {
 		this.registrationValidation = registrationValidation;
+	}
+
+	public void setRegistrationService(RegistrationService registrationService) {
+		this.registrationService = registrationService;
 	}
 
 	// Display the form on the get request
@@ -38,6 +45,10 @@ public class RegistrationController {
 		if (result.hasErrors()) {
 			return "registrationform";
 		}
-		return "registrationsuccess";
+		else{
+			boolean userExists = registrationService.checkRegistrtion(registration.getRole(),registration.getUserName(),registration.getPassword(),registration.getEmail());
+			System.out.println(userExists);
+			return "registrationsuccess";
+		}
 	}
 }

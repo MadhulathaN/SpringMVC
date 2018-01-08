@@ -12,7 +12,7 @@
 <FONT color="blue">
 User Name="UserName" and password="password"
 </FONT>
-<form:form action="loginform.html"  commandName="loginForm">
+<form:form action="loginform.html"  commandName="loginForm" method ="post">
 	<table>
 		<tr>
 			<td>User Name:<FONT color="red"><form:errors
